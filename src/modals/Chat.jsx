@@ -7,7 +7,7 @@ export default function Chat({ visible, onClose }) {
   const [showTyping, setShowTyping] = useState(false); // для левого сообщения
 
   const fullMessage =
-    "Я верю, что наше будущее будет наполнено любовью, теплом и счастьем. Всё самое важное впереди, и я хочу пройти этот путь только с тобой.";
+    "Я хочу построить с тобой наш собственный мир, где будут только честность, доверие и бесконечная нежность.";
 
   useEffect(() => {
     if (!visible) return;
