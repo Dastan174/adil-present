@@ -7,12 +7,14 @@
     width: 100%;
     min-height: 830px;
     position: relative;
+    object-fit: cover;
   }
 
   .img2 {
     width: 100%;
     min-height: 630px;
     position: relative;
+    object-fit: cover;
   }
   .img1,
   .img3 {

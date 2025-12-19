@@ -55,7 +55,11 @@ const page = () => {
         <source src="/music.mp3" type="audio/mpeg" />
         Ваш браузер не поддерживает аудио.
       </audio>
-      <div onClick={smoothScrollDown} className={styles.img1}>
+      <div
+        onClick={smoothScrollDown}
+        className={styles.img2}
+        style={{ display: "flex", alignItems: "center" }}
+      >
         <Image priority src="/images/open.png" fill alt="open" />
       </div>
     </div>
