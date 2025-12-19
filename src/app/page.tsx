@@ -58,7 +58,12 @@ const page = () => {
   }, []);
   return (
     <div className={styles.page}>
-      <audio ref={audioRef} loop>
+      <audio
+        ref={audioRef}
+        loop
+        preload="auto" // ← предзагрузка
+        crossOrigin="anonymous" // ← для CORS если нужно
+      >
         <source src="/music.mp3" type="audio/mpeg" />
         Ваш браузер не поддерживает аудио.
       </audio>
