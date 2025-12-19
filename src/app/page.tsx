@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import React, { useEffect, useRef, useState } from "react";
+import Slider from "../components/slider/Slider";
 
 const page = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -62,6 +63,7 @@ const page = () => {
       >
         <Image priority src="/images/open.png" fill alt="open" />
       </div>
+      <Slider />
     </div>
   );
 };
