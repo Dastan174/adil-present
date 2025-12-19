@@ -37,6 +37,18 @@ const VideoShamil = () => {
       )}
 
       {/* Отладочная информация */}
+      <div
+        style={{
+          marginTop: "10px",
+          fontSize: "12px",
+          color: "#888",
+          padding: "5px",
+          background: "#f5f5f5",
+          borderRadius: "4px",
+        }}
+      >
+        Примечание: Видео приватное.
+      </div>
     </div>
   );
 };
