@@ -70,13 +70,13 @@ const page = () => {
       {showRest && (
         <>
           <div onClick={smoothScrollDown} className={styles.img2}>
-            <Image priority src="/images/four.webp" fill alt="open" />
+            <Image loading="lazy" src="/images/four.webp" fill alt="open" />
           </div>
           <div onClick={smoothScrollDown} className={styles.img2}>
-            <Image priority src="/images/trip.webp" fill alt="open" />
+            <Image src="/images/trip.webp" fill alt="open" loading="lazy" />
           </div>
           <div onClick={smoothScrollDown} className={styles.img2}>
-            <Image priority src="/images/six.webp" fill alt="open" />
+            <Image src="/images/update.webp" fill alt="open" loading="lazy" />
           </div>
           <Typewritter />
           <Slider />
