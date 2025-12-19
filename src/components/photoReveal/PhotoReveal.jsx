@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import "./photoReveal.css";
+import Image from "next/image";
 
 export default function PhotoReveal() {
   const [progress, setProgress] = useState(0);
@@ -40,12 +41,23 @@ export default function PhotoReveal() {
         onMouseLeave={() => cursorX.set(-100)}
       >
         {/* Исходное размытое фото */}
-        <img src="/images/four.webp" className="blurred-photo" />
+        <Image
+          alt="cho"
+          src="/images/blur.webp"
+          className="blurred-photo"
+          width={393}
+          height={400}
+          loading="lazy"
+        />
 
         {/* Чистое фото, которое открывается */}
-        <img
-          src="/images/end.webp"
+        <Image
+          alt="cho"
+          src="/images/blur.webp"
           className="clear-photo"
+          width={393}
+          height={400}
+          loading="lazy"
           style={{
             clipPath: `inset(0 ${100 - progress}% 0 0)`,
           }}
@@ -59,7 +71,7 @@ export default function PhotoReveal() {
             left: "-25px", // Центрирование курсора
           }}
         >
-          👆
+          ➡️
         </motion.div>
 
         {/* Полоса прогресса */}
@@ -69,9 +81,7 @@ export default function PhotoReveal() {
         </div>
       </div>
 
-      <p className="hint">
-        Проведите пальцем или курсором по фото слева направо
-      </p>
+      <p className="hint">Проведите пальцем по фото слева направо</p>
     </div>
   );
 }

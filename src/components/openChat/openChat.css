@@ -52,7 +52,7 @@
 
 /* анимация дергания */
 .shake {
-  animation: shakeAnim 0.6s ease;
+  animation: shakeAnim 0.4s linear;
 }
 
 @keyframes shakeAnim {
@@ -71,7 +71,7 @@
   80% {
     transform: translate(2px, 0) rotate(5deg);
   }
-  100% {
+  /* 100% {
     transform: translate(0, 0) rotate(0deg);
-  }
+  } */
 }

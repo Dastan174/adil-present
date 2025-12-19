@@ -11,7 +11,7 @@ export default function OpenChat() {
     const interval = setInterval(() => {
       setShake(true);
       setTimeout(() => setShake(false), 600); // остановка анимации
-    }, 3000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 

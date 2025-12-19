@@ -8,6 +8,7 @@ import Typewritter from "../components/typewritter/Typewritter";
 import OpenChat from "../components/openChat/OpenChat";
 import LastChat from "../components/lastChat/LastChat";
 import PhotoReveal from "../components/photoReveal/PhotoReveal";
+import VideoAdil from "../components/videoAdil/VideoAdil";
 
 const page = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -70,20 +71,21 @@ const page = () => {
       </div>
       {showRest && (
         <>
-          <PhotoReveal />
           <Typewritter />
-          <div className={styles.img2}>
-            <Image loading="lazy" src="/images/four.webp" fill alt="open" />
-          </div>
+          <PhotoReveal />
+          <Slider />
           <div className={styles.img2}>
             <Image src="/images/trip.webp" fill alt="open" loading="lazy" />
           </div>
+          <OpenChat />
+          <div className={styles.img2}>
+            <Image loading="lazy" src="/images/four.webp" fill alt="open" />
+          </div>
+          <Balloons />
           <div className={styles.img1}>
             <Image src="/images/update.webp" fill alt="open" loading="lazy" />
           </div>
-          <Slider />
-          <Balloons />
-          <OpenChat />
+          <VideoAdil />
           <LastChat />
           <div className={styles.img1}>
             <Image loading="lazy" src="/images/end.webp" fill alt="open" />
