@@ -22,13 +22,14 @@ const VideoShamil = () => {
       <h2>Наши воспоминания</h2>
       {windowWidth < 500 ? (
         <iframe
-          className="img"
-          src="https://drive.google.com/file/d/1v--IZd7FI4NO_bQcXWz-FEgv56m0Zqyn/preview?mute=1"
-          allow="autoplay"
-          title="Наши воспоминания"
-          sandbox="allow-scripts allow-same-origin"
+          src="https://www.youtube.com/embed/RmV6MQyEs2U?autoplay=0&mute=1&controls=1&rel=0"
+          title="Наши короткие моменты счастья"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
           muted
-        ></iframe>
+          className="img"
+          sandbox="allow-scripts allow-same-origin"
+        />
       ) : (
         <p style={{ padding: "20px", color: "#666", fontStyle: "italic" }}>
           Видео доступно только на экранах меньше 500px
@@ -36,19 +37,6 @@ const VideoShamil = () => {
       )}
 
       {/* Отладочная информация */}
-      <div
-        style={{
-          marginTop: "10px",
-          fontSize: "12px",
-          color: "#888",
-          padding: "5px",
-          background: "#f5f5f5",
-          borderRadius: "4px",
-        }}
-      >
-        Текущая ширина: {windowWidth}px | Условие: width &lt; 500 ={" "}
-        {windowWidth < 500 ? "true" : "false"}
-      </div>
     </div>
   );
 };
