@@ -5,42 +5,43 @@ import "./typewritter.css";
 
 export default function TypingFeather() {
   const fullText =
-    "hТы - как утро после дождя, нежная и светлая. Каждое мгновение рядом с тобой наполняет сердце теплом, а твоя улыбка — моим светом. Люблю тебя больше, чем слова могут передать, и каждый день благодарю судьбу за тебя.";
-  const [displayedText, setDisplayedText] = useState([]);
+    "Ты — моя личная вселенная, вокруг которой вращаются все мои мысли и мечты. В твоих глазах я нашел бесконечность, а в твоей улыбке — свой вечный источник света.";
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
   const cursorRef = useRef(null);
+  const textRef = useRef(null);
   const [coords, setCoords] = useState({ x: 0, y: 0 });
 
   // Добавляем буквы
   useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < fullText.length) {
-        setDisplayedText((prev) => [...prev, fullText[i]]);
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 150);
-    return () => clearInterval(interval);
-  }, []);
+    if (currentIndex < fullText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText((prev) => prev + fullText[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
+      }, 150);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, fullText]);
 
   // Обновляем координаты пера после каждого рендера
   useLayoutEffect(() => {
-    const rect = cursorRef.current.getBoundingClientRect();
-    const parentRect = cursorRef.current.parentElement.getBoundingClientRect();
-    setCoords({
-      x: rect.left - parentRect.left,
-      y: rect.top - parentRect.top,
-    });
+    if (cursorRef.current && textRef.current) {
+      const rect = cursorRef.current.getBoundingClientRect();
+      const textRect = textRef.current.getBoundingClientRect();
+
+      // Вычисляем позицию относительно контейнера текста
+      setCoords({
+        x: rect.left - textRect.left + rect.width / 2 + 20,
+        y: rect.top - textRect.top + rect.height / 2 - 30, // Поднимаем перо на 15px
+      });
+    }
   }, [displayedText]);
 
   return (
     <div className="typing-container">
-      <div className="text-wrapper">
+      <div className="text-wrapper" ref={textRef}>
         <p className="typing-text">
-          {displayedText.map((char, i) => (
-            <span key={i}>{char}</span>
-          ))}
+          {displayedText}
           <span className="cursor-span" ref={cursorRef}></span>
         </p>
 
@@ -48,11 +49,12 @@ export default function TypingFeather() {
           className="feather"
           animate={{
             x: coords.x,
-            y: [0, -2, 0],
+            y: coords.y,
             rotate: [-10, 10, -10],
           }}
           transition={{
-            x: { type: "spring", stiffness: 80, damping: 15 },
+            x: { type: "spring", stiffness: 150, damping: 20 },
+            y: { type: "spring", stiffness: 150, damping: 20 },
             rotate: { duration: 1.5, repeat: Infinity, ease: "easeInOut" },
           }}
         >

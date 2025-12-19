@@ -10,24 +10,51 @@
   border-bottom: 20px solid #f1e6ea;
 }
 
+.text-wrapper {
+  position: relative;
+  max-width: 900px;
+}
+
 .typing-text {
-  display: inline;
+  display: inline-block;
   white-space: pre-wrap;
   position: relative;
-  span {
-    font-size: 32px;
-    font-family: "Marck Script", cursive;
+  font-size: 32px;
+  font-family: "Marck Script", cursive;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  min-height: 200px;
+}
+
+.cursor-span {
+  display: inline-block;
+  width: 2px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
   }
 }
-
 .feather {
+  position: absolute;
   display: inline-block;
   font-size: 32px;
-  vertical-align: baseline; /* или middle для чуть выше */
-  margin-left: 2px;
-  animation: wiggle 1s infinite ease-in-out;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
-
 @keyframes wiggle {
   0%,
   100% {

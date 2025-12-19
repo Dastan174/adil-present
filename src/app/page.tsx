@@ -7,6 +7,7 @@ import Balloons from "../components/baloons/Baloons";
 import Typewritter from "../components/typewritter/Typewritter";
 import OpenChat from "../components/openChat/OpenChat";
 import LastChat from "../components/lastChat/LastChat";
+import PhotoReveal from "../components/photoReveal/PhotoReveal";
 
 const page = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -69,20 +70,24 @@ const page = () => {
       </div>
       {showRest && (
         <>
+          <PhotoReveal />
           <Typewritter />
-          <div onClick={smoothScrollDown} className={styles.img2}>
+          <div className={styles.img2}>
             <Image loading="lazy" src="/images/four.webp" fill alt="open" />
           </div>
-          <div onClick={smoothScrollDown} className={styles.img2}>
+          <div className={styles.img2}>
             <Image src="/images/trip.webp" fill alt="open" loading="lazy" />
           </div>
-          <div onClick={smoothScrollDown} className={styles.img1}>
+          <div className={styles.img1}>
             <Image src="/images/update.webp" fill alt="open" loading="lazy" />
           </div>
           <Slider />
           <Balloons />
           <OpenChat />
           <LastChat />
+          <div className={styles.img1}>
+            <Image loading="lazy" src="/images/end.webp" fill alt="open" />
+          </div>
         </>
       )}
     </div>
