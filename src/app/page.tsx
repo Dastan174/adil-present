@@ -3,6 +3,10 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import React, { useEffect, useRef, useState } from "react";
 import Slider from "../components/slider/Slider";
+import Balloons from "../components/baloons/Baloons";
+import Typewritter from "../components/typewritter/Typewritter";
+import OpenChat from "../components/openChat/OpenChat";
+import LastChat from "../components/lastChat/LastChat";
 
 const page = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -61,9 +65,26 @@ const page = () => {
         className={styles.img2}
         style={{ display: "flex", alignItems: "center" }}
       >
-        <Image priority src="/images/open.png" fill alt="open" />
+        <Image priority src="/images/open.webp" fill alt="open" />
       </div>
-      <Slider />
+      {showRest && (
+        <>
+          <div onClick={smoothScrollDown} className={styles.img2}>
+            <Image priority src="/images/four.webp" fill alt="open" />
+          </div>
+          <div onClick={smoothScrollDown} className={styles.img2}>
+            <Image priority src="/images/trip.webp" fill alt="open" />
+          </div>
+          <div onClick={smoothScrollDown} className={styles.img2}>
+            <Image priority src="/images/six.webp" fill alt="open" />
+          </div>
+          <Typewritter />
+          <Slider />
+          <Balloons />
+          <OpenChat />
+          <LastChat />
+        </>
+      )}
     </div>
   );
 };

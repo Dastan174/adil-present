@@ -1,0 +1,39 @@
+.typing-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff5fb;
+  padding: 20px 50px;
+  border-top: 20px solid #f1e6ea;
+  border-bottom: 20px solid #f1e6ea;
+}
+
+.typing-text {
+  display: inline;
+  white-space: pre-wrap;
+  position: relative;
+  span {
+    font-size: 32px;
+    font-family: "Marck Script", cursive;
+  }
+}
+
+.feather {
+  display: inline-block;
+  font-size: 32px;
+  vertical-align: baseline; /* или middle для чуть выше */
+  margin-left: 2px;
+  animation: wiggle 1s infinite ease-in-out;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
