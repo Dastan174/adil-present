@@ -69,16 +69,16 @@ const page = () => {
       </div>
       {showRest && (
         <>
+          <Typewritter />
           <div onClick={smoothScrollDown} className={styles.img2}>
             <Image loading="lazy" src="/images/four.webp" fill alt="open" />
           </div>
           <div onClick={smoothScrollDown} className={styles.img2}>
             <Image src="/images/trip.webp" fill alt="open" loading="lazy" />
           </div>
-          <div onClick={smoothScrollDown} className={styles.img2}>
+          <div onClick={smoothScrollDown} className={styles.img1}>
             <Image src="/images/update.webp" fill alt="open" loading="lazy" />
           </div>
-          <Typewritter />
           <Slider />
           <Balloons />
           <OpenChat />
