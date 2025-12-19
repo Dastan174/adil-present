@@ -11,25 +11,3 @@
     width: 100%;
   }
 }
-/* CSS */
-.hidden-iframe {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.video-placeholder {
-  width: 600px;
-  height: 400px;
-  background: linear-gradient(45deg, #ffb6c1, #ffe4e1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  color: #d14d72;
-  font-family: "Dancing Script", cursive;
-  font-size: 24px;
-  margin: 0 auto;
-}
